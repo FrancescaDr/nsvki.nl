@@ -18,6 +18,6 @@ def set_lang(lang):
         return redirect('page.index')
 
     rv = make_response(redirect(redirect_url()))
-    rv.set_cookie('username', 'the username')
+    rv.set_cookie('lang', lang)
     refresh()
     return rv

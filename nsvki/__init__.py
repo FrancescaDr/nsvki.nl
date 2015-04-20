@@ -17,9 +17,9 @@ babel = Babel(application)
 @babel.localeselector
 def get_locale():
     lang = request.cookies.get('lang')
-    if lang:
-        return lang
-    return request.accept_languages.best_match(list(LANGUAGES.keys()))
+    if not lang:
+        lang = request.accept_languages.best_match(list(LANGUAGES.keys()))
+    return lang
 
 
 def static_url(url):
