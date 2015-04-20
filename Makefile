@@ -13,7 +13,7 @@ babel_compile: babel_update
 # Merge the new messages.pot with the existing translations.
 .PHONY: babel_update
 babel_update: babel_extract
-	python ${pybabel} update -i ${messages} -d ${i18n}
+	python ${pybabel} update -i '${messages}' -d '${i18n}'
 	make clean
 
 
