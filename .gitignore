@@ -36,3 +36,5 @@ dist/
 gitlog.txt
 gitlog.md
 gitlog.py
+
+*.po
