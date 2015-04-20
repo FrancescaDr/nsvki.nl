@@ -1,0 +1,49 @@
+{% from "macros/flash.htm" import render_flash %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NSVKI{% if title %} - {{ title }}{% endif %}</title>
+
+        {% if data %}
+            <script>
+                flask_data = {{json.dumps(serialize_sqla(data))|safe}};
+            </script>
+        {% endif %}
+
+        <script src="{{static_url("/static/js/jquery.min.js")}}"></script>
+        <script src="{{static_url("/static/js/bootstrap.min.js")}}"></script>
+        <link href="{{static_url("/static/css/bootstrap.min.css")}}" rel="stylesheet" />
+        <link href="{{static_url("/static/css/bootstrap-theme.min.css")}}" rel="stylesheet" />
+        <link href="{{static_url("/static/css/custom.css")}}" rel="stylesheet" />
+
+        {% block includes %}
+        {% endblock %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                {{ render_template('header.htm') | safe }}
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-sm-12" id="flash_messages">
+                            {% if request.path == '/' %}
+                                {{ flash(_('Welcome to the website')) | default("", True) }}
+                            {% endif %}
+                            {{ render_flash() }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% block page %}
+                        {% endblock %}
+                    </div>
+                    {{ render_template('footer.htm') }}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
