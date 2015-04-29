@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint, request
 from flask.ext.babel import _
 
 blueprint = Blueprint('page', __name__)
@@ -9,12 +9,21 @@ blueprint = Blueprint('page', __name__)
 
 @blueprint.route('/', methods=['GET'])
 def index():
-    return render_template('association.htm', title=_('Association'))
+    lang = request.cookies.get('lang')
+    if not lang:
+        return render_template('en/association.htm', title=_('Association'))
+    else:
+        return render_template('%s/association.htm' % lang,
+                               title=_('Association'))
 
 
 @blueprint.route('/links', methods=['GET'])
 def links():
-    return render_template('links.htm', title=_('Links'))
+    lang = request.cookies.get('lang')
+    if not lang:
+        return render_template('en/links.htm', title=_('Links'))
+    else:
+        return render_template('%s/links.htm' % lang, title=_('Links'))
 
 
 @blueprint.route('/contact', methods=['GET'])
