@@ -1,4 +1,4 @@
-SECRET_KEY = 'memebaseers'
+SECRET_KEY = 'lolol'
 LANGUAGES = {
     'en': 'English',
     'nl': 'Nederlands',
