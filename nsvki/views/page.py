@@ -17,6 +17,10 @@ def index():
                                title=_('Association'))
 
 
+@blueprint.route('/masters/amsterdam', methods=['GET'])
+def amsterdam():
+    return render_template('en/amsterdam.htm', title="Masters in Amsterdam")
+
 @blueprint.route('/links', methods=['GET'])
 def links():
     lang = request.cookies.get('lang')

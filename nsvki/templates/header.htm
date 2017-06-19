@@ -17,7 +17,16 @@
         <ul class="nav navbar-nav navbar-left">
             <li><a href="{{ url_for('page.index') }}">{{ _('Association') }}</a></li>
             <li><a href="{{ url_for('page.contact') }}">{{ _('Contact') }}</a></li>
-            <li><a href="{{ url_for('page.links') }}">{{ _('Links') }}</a></li>
+            <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">AI Masters<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Amsterdam</a></li>
+                    <li><a href="#">Utrecht</a></li>
+                    <li><a href="#">Groningen</a></li>
+                    <li><a href="#">Nijmegen</a></li>
+                </ul>
+            
+            </li>-->
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ url_for('lang.set_lang', lang='en') }}"><small>English</small></a></li>
