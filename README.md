@@ -18,3 +18,8 @@ Run the site with:
 ```bash
 python run.py
 ```
+
+## Changing content
+
+If you want to make changes to the website, please fork this repository,
+make your changes, and create a pull request.
