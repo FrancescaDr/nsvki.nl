@@ -21,6 +21,9 @@ def index():
 def amsterdam():
     return render_template('en/amsterdam.htm', title="Masters in Amsterdam")
 
+@blueprint.route('/masters/utrecht', methods=['GET'])
+def utrecht():
+    return render_template('en/utrecht.htm', title="Masters in Utrecht")
 
 @blueprint.route('/links', methods=['GET'])
 def links():
