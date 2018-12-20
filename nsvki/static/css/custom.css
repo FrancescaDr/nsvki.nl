@@ -1,2 +1,7 @@
-body { overflow-x:hidden; }
-logo { padding:10px; }
+body {
+    overflow-x:hidden;
+}
+
+.logo {
+    padding:10px;
+}
