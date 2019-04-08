@@ -91,15 +91,24 @@
 
                         <h3> Contact </h3>
                         <script language=javascript>
-                            // Create an non-crawlable email-adres
+                            // Create an non-crawlable email-adres and
+                            // phone number.
+
                             <!--
                             var username = "bestuur";
                             var hostname = "svia.nl";
                             var linktext = username + "@" + hostname;
-                            document.write("&#1F4DE (020) 525 7880")
+                            var phone_area = "(020)";
+                            var phone_number = "525 7880";
+
+                            document.write("&#1F310 <a href=" + "https://www." +
+                                hostname + ">" + hostname + "</a>");
+                            document.write("&#1F4DE <a href=" + "tel:" +
+                                phone_area + " " + phone_number + ">" +
+                                phone_area + " " + phone_number + "</a>");
                             document.write("&#1F4E7 <a href=" + "mail" + "to:" +
                                 username + "@" + hostname + ">" + linktext +
-                                "</a>")
+                                "</a>");
                             //-->
                         </script>
                     </div>
