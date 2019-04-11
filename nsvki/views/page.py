@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from flask import render_template, Blueprint, request
-from flask.ext.babel import _
+from flask_babel import _
 
 blueprint = Blueprint('page', __name__)
 

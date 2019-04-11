@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from flask import Blueprint, redirect, make_response, request, url_for
-from flask.ext.babel import refresh
+from flask_babel import refresh
 from config import LANGUAGES
 
 blueprint = Blueprint('lang', __name__)
