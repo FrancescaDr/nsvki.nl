@@ -38,3 +38,5 @@ gitlog.md
 gitlog.py
 
 *.mo
+
+.idea/
